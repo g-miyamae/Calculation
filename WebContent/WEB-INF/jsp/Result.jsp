@@ -14,7 +14,7 @@
 	<c:set var="ans" value="${ans}"/>
 	<h1>『<c:out value="${ans}"/>』です</h1>
 
-
+<a href = "/Calculation/CalculationServlet?action=login">戻る</a>
 
 </body>
 </html>
