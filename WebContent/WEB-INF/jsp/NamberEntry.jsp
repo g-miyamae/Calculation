@@ -18,7 +18,7 @@
 
 	<input type="hidden" name="action" value="namber">
 
-		数値1=
+
 		<input type="number" name="calculationNamber1" placeholder="数値を入力してください" required >
 
 		<select name="example">
@@ -28,7 +28,6 @@
 			<option value="/">÷</option>
 		</select>
 
-		数値2=
 		<input type="number" name="calculationNamber2" placeholder="数値を入力してください" required >
 
 		<input type="submit" value="計算する"><br>

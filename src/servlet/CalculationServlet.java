@@ -75,6 +75,7 @@ public class CalculationServlet extends HttpServlet {
 						String error = "割り算を行う場合は数値２には「０」を入れないでください";
 						request.setAttribute("error", error);
 						gotoPage(request,response,"/WEB-INF/jsp/NamberEntry.jsp");
+						return;
 					}
 				}
 

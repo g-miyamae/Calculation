@@ -14,5 +14,7 @@
 	<c:set var="ans" value="${ans}"/>
 	<h1>『<c:out value="${ans}"/>』です</h1>
 
+
+
 </body>
 </html>
