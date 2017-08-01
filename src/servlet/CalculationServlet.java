@@ -47,42 +47,43 @@ public class CalculationServlet extends HttpServlet {
 			if(action.equals("login")){
 
 				gotoPage(request,response,"/WEB-INF/jsp/NamberEntry.jsp");
+
 			}
 
 			if(action.equals("namber")){
 
+
 				int calculationNamber1 = Integer.parseInt(request.getParameter("calculationNamber1"));
-				String example = request.getParameter("example");
+				String operator = String.valueOf(request.getParameter("operator"));
 				int calculationNamber2 = Integer.parseInt(request.getParameter("calculationNamber2"));
 
-				if(example.equals("+")){
+
+				System.out.println(calculationNamber1);
+				System.out.println(operator);
+				System.out.println(calculationNamber2);
+
+
+				if(operator.equals("+")){
 					ans =calculationNamber1 + calculationNamber2;
 				}
 
-				else if(example.equals("-")){
+				else if(operator.equals("-")){
 					ans =calculationNamber1 - calculationNamber2;
 				}
 
-				else if(example.equals("*")){
+				else if(operator.equals("*")){
 					ans =calculationNamber1 * calculationNamber2;
 				}
 
-				else if(example.equals("/")){
-					if(calculationNamber2 != 0){
-						ans =calculationNamber1 / calculationNamber2;
-					}
-					else {
-						String error = "割り算を行う場合は数値２には「０」を入れないでください";
-						request.setAttribute("error", error);
-						gotoPage(request,response,"/WEB-INF/jsp/NamberEntry.jsp");
-						return;
-					}
+				else if(operator.equals("/")){
+					//					if(calculationNamber2 != 0){
+					ans =calculationNamber1 / calculationNamber2;
 				}
 
-				request.setAttribute("ans",ans);
-				gotoPage(request,response,"/WEB-INF/jsp/Result.jsp");
-
 			}
+
+			request.setAttribute("ans",ans);
+			gotoPage(request,response,"/WEB-INF/jsp/Result.jsp");
 
 		}
 		catch(Exception e){
@@ -96,3 +97,4 @@ public class CalculationServlet extends HttpServlet {
 
 	}
 }
+
